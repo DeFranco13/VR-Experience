@@ -1019,6 +1019,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
 --- !u!1 &1199610501
+--- !u!1 &1752499548
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1127,6 +1128,9 @@ GameObject:
   - component: {fileID: 1618056949}
   - component: {fileID: 1618056948}
   - component: {fileID: 1618056947}
+  - component: {fileID: 1752499551}
+  - component: {fileID: 1752499550}
+  - component: {fileID: 1752499549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera

@@ -39,8 +39,11 @@ public class CarAgent : Agent
 		controlSignal.x = actionBuffers.ContinuousActions[1];
 		controlSignal.z = -actionBuffers.ContinuousActions[0];
 
-		Vector3 movement = controlSignal.z * speedMultiplier * transform.forward * Time.deltaTime;
-		transform.localPosition += movement;
+		Vector3 movement = new Vector3(0f,0f, controlSignal.z * speedMultiplier * Time.deltaTime*1000);
+		Debug.Log(movement);
+		this.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * movement.z, ForceMode.Acceleration);
+
+		//transform.localPosition += movement;
 
 		if (movement.magnitude > 0.01f)
 		{

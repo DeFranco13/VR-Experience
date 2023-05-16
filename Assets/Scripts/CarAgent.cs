@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
-using Unity.VisualScripting;
-using System.Threading;
 
 public class CarAgent : Agent
 {
+	private Rigidbody rb;
+	public override void Initialize()
+	{
+		rb = GetComponent<Rigidbody>();
+		Debug.Log("initialized");
+	}
 	public override void OnEpisodeBegin()
 	{
 		if (this.transform.localPosition.y < 0)
@@ -22,17 +24,16 @@ public class CarAgent : Agent
 	{
 		// Target en Agent posities
 		sensor.AddObservation(this.transform.localPosition);
-
 	}
 	public float speedMultiplier = 0.1f;
 	public override void OnActionReceived(ActionBuffers actionBuffers)
 	{
-		// Acties, size = 2
+		Debug.Log("received");
+		// Acties
 		Vector3 controlSignal = Vector3.zero;
 		controlSignal.x = actionBuffers.ContinuousActions[0];
 		controlSignal.z = actionBuffers.ContinuousActions[1];
-		transform.Translate(controlSignal * speedMultiplier);
-
+		rb.AddForce(controlSignal * speedMultiplier);
 
 	}
 	public override void Heuristic(in ActionBuffers actionsOut)

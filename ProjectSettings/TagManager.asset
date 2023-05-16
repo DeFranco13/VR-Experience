@@ -10,6 +10,7 @@ TagManager:
   - Car
   - TrackAssets
   - Terrain
+  - Target
   layers:
   - Default
   - TransparentFX

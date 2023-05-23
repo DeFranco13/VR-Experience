@@ -5,7 +5,7 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-public class CubeAgentRays : Agent
+public class CarAgentRays : Agent
 {
 	public Transform Target;
 	public float speedMultiplier = 0.5f;

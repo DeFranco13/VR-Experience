@@ -36461,7 +36461,6 @@ Transform:
   - {fileID: 1441408078}
   - {fileID: 1410603461}
   - {fileID: 910985126}
-  - {fileID: 2930684530352988406}
   m_Father: {fileID: 2052155000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37357,66 +37356,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 489192a6faed4184c87525a623b148b3, type: 3}
   m_PrefabInstance: {fileID: 2141009455}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2930684530352988405
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2069475140}
-    m_Modifications:
-    - target: {fileID: 2078787440510582990, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_Name
-      value: Cartoon-SportCar_Unity_setup
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 380.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 635
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0000029504295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
---- !u!4 &2930684530352988406 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2754152652963243243, guid: e80df20f97f11b34da22eb5c17a8dc2c, type: 3}
-  m_PrefabInstance: {fileID: 2930684530352988405}
   m_PrefabAsset: {fileID: 0}

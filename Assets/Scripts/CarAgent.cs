@@ -3,9 +3,11 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using System.Collections.Generic;
+using System;
 
 public class CarAgent : Agent
 {
+	int toHit = 1;
 	private Rigidbody rb;
 	List<GameObject> targets = new List<GameObject>();
 	int targetCount = 0;
@@ -18,15 +20,13 @@ public class CarAgent : Agent
 
 	public override void OnEpisodeBegin()
 	{
+		toHit = 1;
 		foreach (var target in targets)
 		{
 			target.SetActive(true);
 		}
-		//if (this.transform.localPosition.y < 0)
-		//{
-			this.transform.position = new Vector3(315.2f, 5.64f, 719.7f);
-			this.transform.rotation= new Quaternion(0f,180f,0f,0f);
-		//}
+		this.transform.position = new Vector3(382.6f, 1.1f, 625.82f);
+		this.transform.rotation= new Quaternion(0f,180f,0f,0f);
 	}
 
 	public override void CollectObservations(VectorSensor sensor)
@@ -80,21 +80,51 @@ public class CarAgent : Agent
 		continuousActionsOut[1] = Input.GetAxis("Horizontal");
 	}
 
+	private void OnTriggerEnter(Collider other)
+	{
+		string name = "";
+		try
+		{
+			name = other.transform.parent.name.Split('(')[1];
+			name = name.Substring(0, name.Length - 1);
+		}
+		catch (Exception)
+		{
+		}
+		
+		if (other.tag.Trim() == "Target" && name == toHit.ToString())
+		{
+			other.gameObject.SetActive(false);
+			targets.Add(other.gameObject);
+			AddReward(0.2f);
+			targetHitCount++;
+			Debug.Log("add hit");
+			toHit++;
+			Debug.Log("hit target");
+		}
+		else
+		{
+			if (name == "target" || name == ""){
+				AddReward(0.2f);
+			}
+			else
+			{
+				Debug.Log("wrong target");
+				AddReward(-0.1f);
+				EndEpisode();
+			}
+		}
+	}
+
+
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.transform.parent.tag != "Track" && collision.gameObject.transform.parent.tag != "Target")
+		if (collision.gameObject.transform.parent.tag != "Track")
 		{
 			AddReward(-0.1f);
 			EndEpisode();
 		}
-		if (collision.gameObject.tag == "Target")
-		{
-			collision.gameObject.SetActive(false);
-			targets.Add(collision.gameObject);
-			AddReward(0.2f);
-			targetHitCount++;
-			Debug.Log("hit target");
-		}
+		
 		if (collision.gameObject.tag == "Terrain")
 		{
 			AddReward(-0.2f);

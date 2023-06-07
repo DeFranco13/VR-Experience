@@ -1,3 +1,6 @@
+using System;
+using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -7,11 +10,25 @@ public class SteeringWheel : XRBaseInteractable
     [SerializeField] private Transform wheelTransform;
 
     public UnityEvent<float> OnWheelRotated;
+    public SetHandPosition handPositionRight;
+    public SetHandPosition handPositionLeft;
 
+    
     private float currentAngle = 0.0f;
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
+        if(args.interactorObject.transform.gameObject.name == "LeftHand Controller")
+        {
+            Debug.Log("left");
+            handPositionLeft.attach = args.interactableObject.transform;
+        }
+        else if(args.interactorObject.transform.gameObject.name == "RightHand Controller")
+        {
+            Debug.Log("right");
+            handPositionRight.attach = args.interactableObject.transform;
+        }
+            
         base.OnSelectEntered(args);
         currentAngle = FindWheelAngle();
     }
@@ -40,7 +57,7 @@ public class SteeringWheel : XRBaseInteractable
 
         // Apply difference in angle to wheel
         float angleDifference = currentAngle - totalAngle;
-        wheelTransform.Rotate(transform.forward, -angleDifference, Space.World);
+        wheelTransform.Rotate(transform.up, angleDifference, Space.World);
 
         // Store angle for next process
         currentAngle = totalAngle;

@@ -1,18 +1,26 @@
+using System;
+using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityStandardAssets.Vehicles.Car;
+
 public class SteeringWheel : XRBaseInteractable
 {
     //https://www.youtube.com/watch?v=qbCEHCVx-Dc
     [SerializeField] private Transform wheelTransform;
 
     public UnityEvent<float> OnWheelRotated;
+    public CarUserControl controller;
 
+    
     private float currentAngle = 0.0f;
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
-    {
+    {            
         base.OnSelectEntered(args);
+        controller.usingWheel = true;
         currentAngle = FindWheelAngle();
     }
 
@@ -20,6 +28,7 @@ public class SteeringWheel : XRBaseInteractable
     {
         base.OnSelectExited(args);
         currentAngle = FindWheelAngle();
+        controller.usingWheel = false;
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -40,7 +49,8 @@ public class SteeringWheel : XRBaseInteractable
 
         // Apply difference in angle to wheel
         float angleDifference = currentAngle - totalAngle;
-        wheelTransform.Rotate(transform.forward, -angleDifference, Space.World);
+        wheelTransform.Rotate(transform.up, angleDifference, Space.World);
+        controller.angle = angleDifference;
 
         // Store angle for next process
         currentAngle = totalAngle;

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2060848588763512110}
   - component: {fileID: 4286702913739147748}
   - component: {fileID: 7408997193202916877}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: prop_wall_A
-  m_TagString: Untagged
+  m_TagString: TrackObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 296265771244246649}
   - component: {fileID: 3345464073372499195}
   - component: {fileID: 7289509401825338861}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall_fence_001
-  m_TagString: Untagged
+  m_TagString: TrackObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,7 +18,14 @@ behaviors:
       num_layers: 2
     reward_signals:
       extrinsic:
-        gamma: 0.95
+        gamma: 0.99
+        strength: 1.0
+      gail:
+        gamma: 0.99
+        strength: 1.0
+        demo_path: Assets/Demonstrations/CarAgent.demo
+    behavioral_cloning:
+        demo_path: Assets/Demonstrations/CarAgent.demo
         strength: 1.0
     max_steps: 1000000
     time_horizon: 64

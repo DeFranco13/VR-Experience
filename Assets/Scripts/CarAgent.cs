@@ -34,7 +34,6 @@ namespace UnityStandardAssets.Vehicles.Car
 		{
 			toHit = 0;
 			targetHitCount = 0;
-			toHit = 0;
 			//carController.Move(0, 0, 0, 0);
 			//set the targets active again every new episode
             foreach (var target in targets)
@@ -42,7 +41,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 target.SetActive(true);
             }
 
-            this.transform.position = new Vector3(382.6f, 1.1f, 625.82f);
+            this.transform.position = new Vector3(380f, 1.1f, 613.82f);
 			this.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
 		}
 
@@ -53,28 +52,25 @@ namespace UnityStandardAssets.Vehicles.Car
             sensor.AddObservation(this.transform.localRotation);
         }
 
-		public float speedMultiplier = 0.5f;
-		public float rotationSpeed = 100f;
-
 		public override void OnActionReceived(ActionBuffers actionBuffers)
 		{
 			Vector3 controlSignal = Vector3.zero;
 
-            controlSignal.z = actionBuffers.ContinuousActions[0];
-            controlSignal.x = actionBuffers.ContinuousActions[1];
+			controlSignal.x = actionBuffers.ContinuousActions[0];
+            controlSignal.z = actionBuffers.ContinuousActions[1];
             controlSignal.y = actionBuffers.ContinuousActions[2];
 
-			
-            //beweeg de auto
-            carController.Move(controlSignal.x, controlSignal.z, controlSignal.z, controlSignal.y);
-			
-            /*
+			//beweeg de auto
+			carController.Move(controlSignal.x, controlSignal.z, controlSignal.z, controlSignal.y);
+            //carController.Move(controlSignal.x, 0f/*controlSignal.z*/, controlSignal.z, controlSignal.y);
+
+			/*
 			 * 1) moest de auto voor een of andere reden naar boven bewegen stoppen we de episode
 			 * 2) we geven een positieve reward wanneer de auto een target hit en als hij een ronde heeft uitgereden
 			 * 3) we geven een negatieve reward wanneer hij de zijmuren raakt 
 			 * of er door zou rijden en van de track zo gaan
 			*/
-            if (transform.position.y > 10.0f)
+			if (transform.position.y > 10.0f)
 			{
 				AddReward(-0.2f);
 				EndEpisode();

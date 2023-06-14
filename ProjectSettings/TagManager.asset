@@ -11,11 +11,13 @@ TagManager:
   - TrackAssets
   - Terrain
   - Target
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wheel
   - Water
   - UI
   - 

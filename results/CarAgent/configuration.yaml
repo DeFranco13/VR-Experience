@@ -24,8 +24,8 @@ behaviors:
       deterministic: false
     reward_signals:
       extrinsic:
-        gamma: 0.95
-        strength: 1.0
+        gamma: 0.99
+        strength: 0.5
         network_settings:
           normalize: false
           hidden_units: 128
@@ -34,15 +34,37 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
+      gail:
+        gamma: 0.99
+        strength: 0.9
+        network_settings:
+          normalize: false
+          hidden_units: 128
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+          deterministic: false
+        learning_rate: 0.0003
+        encoding_size: null
+        use_actions: false
+        use_vail: false
+        demo_path: Assets/Demonstrations/FirstDemo.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
     max_steps: 1000000
     time_horizon: 64
-    summary_freq: 2000
+    summary_freq: 10000
     threaded: false
     self_play: null
-    behavioral_cloning: null
+    behavioral_cloning:
+      demo_path: Assets/Demonstrations/FirstDemo.demo
+      steps: 0
+      strength: 0.9
+      samples_per_update: 0
+      num_epoch: null
+      batch_size: null
 env_settings:
   env_path: null
   env_args: null
@@ -66,8 +88,8 @@ checkpoint_settings:
   run_id: CarAgent
   initialize_from: null
   load_model: false
-  resume: false
-  force: true
+  resume: true
+  force: false
   train_model: false
   inference: false
   results_dir: results

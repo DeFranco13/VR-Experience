@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3139160735845283255}
   - component: {fileID: 897479970773369213}
   - component: {fileID: 2100484122776244856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: prop_tyre_4x8
-  m_TagString: Untagged
+  m_TagString: TrackObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,7 +8,8 @@ namespace UnityStandardAssets.Vehicles.Car
     public class CarUserControl : MonoBehaviour
     {
         private CarController m_Car; // the car controller we want to use
-
+        public float angle;
+        public bool usingWheel;
 
         private void Awake()
         {

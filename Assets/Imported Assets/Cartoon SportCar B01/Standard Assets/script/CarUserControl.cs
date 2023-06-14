@@ -17,33 +17,25 @@ namespace UnityStandardAssets.Vehicles.Car
             m_Car = GetComponent<CarController>();
         }
 
-
-        private void FixedUpdate()
+        public void Move(float h, float v, float handbrake)
         {
-            
-            // pass the input to the car!
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
-#if !MOBILE_INPUT
-            float handbrake = CrossPlatformInputManager.GetAxis("Jump");
+			m_Car.Move(h, v, v, handbrake);
 
-            if (usingWheel)
-            {
-                m_Car.Move(angle, v, v, handbrake);
-            }
-            else
-            {
-                m_Car.Move(h, v, v, handbrake);
-            }
-#else
-            if(usingWheel)
-            {
-                m_Car.Move(angle, v, v, handbrake);
-            } else
-            {
-            m_Car.Move(h, v, v, 0f);
-            }
-#endif
+		}
+
+		private void FixedUpdate()
+        {
+
+            //Move();
+//            // pass the input to the car!
+//            float h = CrossPlatformInputManager.GetAxis("Horizontal");
+//            float v = CrossPlatformInputManager.GetAxis("Vertical");
+//#if !MOBILE_INPUT
+//            float handbrake = CrossPlatformInputManager.GetAxis("Jump");
+//            m_Car.Move(h, v, v, handbrake);
+//#else
+//            m_Car.Move(h, v, v, 0f);
+//#endif
         }
     }
 }

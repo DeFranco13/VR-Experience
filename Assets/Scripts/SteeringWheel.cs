@@ -27,8 +27,10 @@ public class SteeringWheel : XRBaseInteractable
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
-        currentAngle = FindWheelAngle();
+        this.currentAngle = 0;
+        wheelTransform.rotation = new Quaternion(0, 0, 0, 0);
         controller.usingWheel = false;
+        currentAngle = FindWheelAngle();
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -50,7 +52,11 @@ public class SteeringWheel : XRBaseInteractable
         // Apply difference in angle to wheel
         float angleDifference = currentAngle - totalAngle;
         wheelTransform.Rotate(transform.up, angleDifference, Space.World);
-        controller.angle = angleDifference;
+
+        //if user is not controlling wheel, reset wheel to normal rotation
+
+        controller.angle = -(currentAngle/90);
+        
 
         // Store angle for next process
         currentAngle = totalAngle;

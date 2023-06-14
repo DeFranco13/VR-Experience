@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4518310734396646161}
   - component: {fileID: 8634615817499845520}
   - component: {fileID: 4352202012785300577}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Target
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 313262366132211850}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Target
   m_TagString: Target
   m_Icon: {fileID: 0}

@@ -188,7 +188,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 		}
 
 
-		// virtual axis and buttonPlaceholder classes - applies to mobile input
+		// virtual axis and button classes - applies to mobile input
 		// Can be mapped to touch joysticks, tilt, gyro, etc, depending on desired implementation.
 		// Could also be implemented by other input devices - kinect, electronic sensors, etc
 		public class VirtualAxis
@@ -237,9 +237,9 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 		}
 
-		// a controller gameobject (eg. a virtual GUI buttonPlaceholder) should call the
+		// a controller gameobject (eg. a virtual GUI button) should call the
 		// 'pressed' function of this class. Other objects can then read the
-		// Get/Down/Up state of this buttonPlaceholder.
+		// Get/Down/Up state of this button.
 		public class VirtualButton
 		{
 			public string name { get; private set; }
@@ -263,7 +263,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 
 
-			// A controller gameobject should call this function when the buttonPlaceholder is pressed down
+			// A controller gameobject should call this function when the button is pressed down
 			public void Pressed()
 			{
 				if (m_Pressed)
@@ -275,7 +275,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 
 
-			// A controller gameobject should call this function when the buttonPlaceholder is released
+			// A controller gameobject should call this function when the button is released
 			public void Released()
 			{
 				m_Pressed = false;
@@ -283,14 +283,14 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 
 
-			// the controller gameobject should call Remove when the buttonPlaceholder is destroyed or disabled
+			// the controller gameobject should call Remove when the button is destroyed or disabled
 			public void Remove()
 			{
 				UnRegisterVirtualButton(name);
 			}
 
 
-			// these are the states of the buttonPlaceholder which can be read via the cross platform input system
+			// these are the states of the button which can be read via the cross platform input system
 			public bool GetButton
 			{
 				get { return m_Pressed; }

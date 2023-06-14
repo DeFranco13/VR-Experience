@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4023465009208986294}
   - component: {fileID: 1167223205510610556}
   - component: {fileID: 4531869417216825280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: prop_wall_E
-  m_TagString: Untagged
+  m_TagString: TrackObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

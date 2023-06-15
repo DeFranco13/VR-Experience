@@ -26,7 +26,7 @@ public class RaceStatTracker : MonoBehaviour
         if (other.gameObject.Equals(FinishLineCollider))
         {
             currentLap++;
-            if (currentLap >= NumberOfLaps)
+            if (currentLap >= NumberOfLaps +1)
             {
                 endGame();
             }

@@ -16,7 +16,7 @@ namespace UnityStandardAssets.CrossPlatformInput
         protected Dictionary<string, CrossPlatformInputManager.VirtualButton> m_VirtualButtons =
             new Dictionary<string, CrossPlatformInputManager.VirtualButton>();
         protected List<string> m_AlwaysUseVirtual = new List<string>();
-            // list of the axis and buttonPlaceholder names that have been flagged to always use a virtual axis or buttonPlaceholder
+            // list of the axis and button names that have been flagged to always use a virtual axis or button
         
 
         public bool AxisExists(string name)
@@ -56,7 +56,7 @@ namespace UnityStandardAssets.CrossPlatformInput
             // check if already have a buttin with that name and log an error if we do
             if (m_VirtualButtons.ContainsKey(button.name))
             {
-                Debug.LogError("There is already a virtual buttonPlaceholder named " + button.name + " registered.");
+                Debug.LogError("There is already a virtual button named " + button.name + " registered.");
             }
             else
             {
@@ -84,7 +84,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 
         public void UnRegisterVirtualButton(string name)
         {
-            // if we have a buttonPlaceholder with this name then remove it from our dictionary of registered buttons
+            // if we have a button with this name then remove it from our dictionary of registered buttons
             if (m_VirtualButtons.ContainsKey(name))
             {
                 m_VirtualButtons.Remove(name);

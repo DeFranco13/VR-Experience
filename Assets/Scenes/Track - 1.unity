@@ -10484,6 +10484,10 @@ PrefabInstance:
       propertyPath: AI_cars
       value: 
       objectReference: {fileID: 587702169}
+    - target: {fileID: 736526585426845262, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7660866853499458602, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
       propertyPath: FinishLineCollider
       value: 

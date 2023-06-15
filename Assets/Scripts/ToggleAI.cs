@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ToggleAI : MonoBehaviour
 {
-    public GameObject AIcars;
+    public GameObject AI_cars;
 
     public void ToggleCars()
     {
-        if(AIcars.activeSelf)
-            AIcars.SetActive(false);
+        if(AI_cars.activeSelf)
+            AI_cars.SetActive(false);
         else 
-            AIcars.SetActive(true);
+            AI_cars.SetActive(true);
     }
 }

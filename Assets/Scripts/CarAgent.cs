@@ -42,7 +42,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 target.SetActive(true);
             }
 
-            this.transform.position = new Vector3(380.06f, 1.1f, 620.2f);
+            this.transform.position = new Vector3(382.6f, 1.1f, 625.82f);
 			this.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
 		}
 
@@ -159,8 +159,8 @@ namespace UnityStandardAssets.Vehicles.Car
 			if (collision.gameObject.transform.tag == "TrackObject")
 			{
 				Debug.Log("keeps hitting wall");
-				AddReward(-0.1f);
-				EndEpisode();
+				AddReward(-0.05f);
+
 				// Start or update the wall collision timer
 				if (!isWallCollisionTimerRunning)
 				{

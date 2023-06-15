@@ -7,14 +7,14 @@ namespace UnityStandardAssets.CrossPlatformInput.PlatformSpecific
     {
         private void AddButton(string name)
         {
-            // we have not registered this button yet so add it, happens in the constructor
+            // we have not registered this buttonPlaceholder yet so add it, happens in the constructor
             CrossPlatformInputManager.RegisterVirtualButton(new CrossPlatformInputManager.VirtualButton(name));
         }
 
 
         private void AddAxes(string name)
         {
-            // we have not registered this button yet so add it, happens in the constructor
+            // we have not registered this buttonPlaceholder yet so add it, happens in the constructor
             CrossPlatformInputManager.RegisterVirtualAxis(new CrossPlatformInputManager.VirtualAxis(name));
         }
 

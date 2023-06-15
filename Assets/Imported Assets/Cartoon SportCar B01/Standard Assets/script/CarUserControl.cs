@@ -17,10 +17,15 @@ namespace UnityStandardAssets.Vehicles.Car
             m_Car = GetComponent<CarController>();
         }
 
+        public void Move(float h, float v, float handbrake)
+        {
+			m_Car.Move(h, v, v, handbrake);
+
+		}
 
         private void FixedUpdate()
         {
-            
+
             // pass the input to the car!
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");

@@ -42,7 +42,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 target.SetActive(true);
             }
 
-            this.transform.position = new Vector3(382.6f, 1.1f, 625.82f);
+            this.transform.position = new Vector3(382.6f, 0.34f, 625.82f);
 			this.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
 		}
 

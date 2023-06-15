@@ -22,10 +22,11 @@ public class RaceStatTracker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.Equals(FinishLineCollider))
         {
             currentLap++;
-            if (currentLap / 24 >= NumberOfLaps)
+            if (currentLap >= NumberOfLaps)
             {
                 endGame();
             }

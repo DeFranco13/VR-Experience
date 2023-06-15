@@ -5321,6 +5321,7 @@ GameObject:
   - component: {fileID: 736526584737687964}
   - component: {fileID: 736526584737687967}
   - component: {fileID: 736526584737687966}
+  - component: {fileID: 7774161324489018913}
   m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
@@ -5423,6 +5424,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7774161324489018913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736526584737687937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f964999ed929d43ad7d8abbd5b0baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FinishLineCollider: {fileID: 0}
+  NumberOfLaps: 3
 --- !u!1 &736526584737960386
 GameObject:
   m_ObjectHideFlags: 0
@@ -7166,6 +7181,7 @@ GameObject:
   - component: {fileID: 736526584986647639}
   - component: {fileID: 736526584986647632}
   - component: {fileID: 737733337999117821}
+  - component: {fileID: 4531875465542150489}
   m_Layer: 0
   m_Name: --- Canvas ---
   m_TagString: Untagged
@@ -7231,6 +7247,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2883825100912590680}
   controller: {fileID: 736526585426845262}
+--- !u!114 &4531875465542150489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736526584986647637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cdaaa21615f5a744888c2fc90c5f464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 7078646997530663573}
+  tracker: {fileID: 7774161324489018913}
 --- !u!1 &736526585013536374
 GameObject:
   m_ObjectHideFlags: 0
@@ -16774,9 +16804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lap
-
-    1/3'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17843,7 +17871,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 736526584780225067}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

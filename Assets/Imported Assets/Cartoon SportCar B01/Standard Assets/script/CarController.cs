@@ -54,7 +54,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float MaxSpeed{get { return m_Topspeed; }}
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
-
+        public float TopSpeed = 0;
         // Use this for initialization
         private void Start()
         {
@@ -180,12 +180,16 @@ namespace UnityStandardAssets.Vehicles.Car
                 case SpeedType.MPH:
 
                     speed *= 2.23693629f;
+                    if (speed > TopSpeed)
+                        TopSpeed = speed;
                     if (speed > m_Topspeed)
                         m_Rigidbody.velocity = (m_Topspeed/2.23693629f) * m_Rigidbody.velocity.normalized;
                     break;
 
                 case SpeedType.KPH:
                     speed *= 3.6f;
+                    if (speed > TopSpeed)
+                        TopSpeed = speed;
                     if (speed > m_Topspeed)
                         m_Rigidbody.velocity = (m_Topspeed/3.6f) * m_Rigidbody.velocity.normalized;
                     break;

@@ -53,9 +53,6 @@ namespace UnityStandardAssets.Vehicles.Car
             sensor.AddObservation(this.transform.localRotation);
         }
 
-		private float speedMultiplier = 10f;
-		private float rotationSpeed = 10f;
-
 		public override void Heuristic(in ActionBuffers actionsOut)
 		{
 			var continuousActionsOut = actionsOut.ContinuousActions;

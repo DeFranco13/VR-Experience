@@ -34325,6 +34325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209029457}
   - component: {fileID: 1209029458}
+  - component: {fileID: 1209029459}
   m_Layer: 0
   m_Name: XR Interaction Manager
   m_TagString: Untagged
@@ -34361,6 +34362,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+--- !u!114 &1209029459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209029456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209a93e1c5d9878458ec6cbe1680415e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraRigs:
+  - {fileID: 1474000661}
+  - {fileID: 1006740646}
+  - {fileID: 1648069124}
+  - {fileID: 1445880386}
+  canvas: {fileID: 0}
 --- !u!1001 &1209474682
 PrefabInstance:
   m_ObjectHideFlags: 0

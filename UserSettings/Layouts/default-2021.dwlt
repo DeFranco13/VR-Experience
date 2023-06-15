@@ -386,9 +386,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 6439fbff
+    m_LastClickedInstanceID: -312988
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
         m_UserData: -308994
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -829,9 +829,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.01955047, y: -0.9730774, z: 0.21128404, w: 0.08998483}
   m_Size:
-    m_Target: 12.124355
+    m_Target: 0.48245433
     speed: 2
-    m_Value: 12.124355
+    m_Value: 0.48245433
   m_Ortho:
     m_Target: 0
     speed: 2

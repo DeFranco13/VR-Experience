@@ -109,7 +109,7 @@ public class RaceStatTracker : MonoBehaviour
         if (other.gameObject.Equals(FinishLineCollider))
         {
             currentLap++;
-            if (currentLap >= NumberOfLaps && !gameEnded)
+            if (currentLap >= NumberOfLaps + 1 && !gameEnded)
             {
                 GameEndedCanvas.enabled = true;
                 RaceTimeText.text = $"{Math.Floor(raceTime / 60)}:{((int)raceTime % 60)}";

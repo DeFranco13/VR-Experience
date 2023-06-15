@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: dff241e18e6bba7448f05179dfc6428b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -10432,6 +10432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UserCar
       objectReference: {fileID: 0}
+    - target: {fileID: 736526584722032328, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 736526584722032329, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -14694,9 +14698,21 @@ PrefabInstance:
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: b2d8885fdc8c48d4797421ba96f9442a, type: 3}
+    - target: {fileID: 529356990, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 529357002, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042539211293304857, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042539211293304857, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6042539211298453829, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
       propertyPath: m_Name
@@ -14716,7 +14732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6042539211298791791, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 6042539211298791791, guid: 97a8175f8eaedb447af04b8c81461c1a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55222,13 +55238,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220194148}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: '- Target -'
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1220194148
 Transform:
   m_ObjectHideFlags: 0

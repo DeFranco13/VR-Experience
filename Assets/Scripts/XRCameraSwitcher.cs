@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class XRCameraSwitcher : MonoBehaviour
 {
     public GameObject[] CameraRigs;
-    private int currentCameraIndex = 0;
+    [NonSerialized] public int currentCameraIndex = 0;
+    public Canvas canvas;
 
     private void Start()
     {
@@ -18,12 +18,12 @@ public class XRCameraSwitcher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             nextCameraRig();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
             previousCameraRig();
         }
@@ -32,8 +32,11 @@ public class XRCameraSwitcher : MonoBehaviour
     private void previousCameraRig()
     {
         disabledCameraRig(currentCameraIndex);
+        if (currentCameraIndex == 0)
+            currentCameraIndex = 7;
         currentCameraIndex = (currentCameraIndex - 1) % CameraRigs.Length;
         activateCameraRig(currentCameraIndex);
+        canvas.enabled= false;
     }
 
     private void nextCameraRig()
@@ -41,6 +44,7 @@ public class XRCameraSwitcher : MonoBehaviour
         disabledCameraRig(currentCameraIndex);
         currentCameraIndex = (currentCameraIndex + 1) % CameraRigs.Length;
         activateCameraRig(currentCameraIndex);
+        canvas.enabled = false;
     }
 
     private void activateCameraRig(int cameraRigIndex)

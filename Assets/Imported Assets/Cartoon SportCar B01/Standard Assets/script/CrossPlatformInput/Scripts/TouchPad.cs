@@ -19,7 +19,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public enum ControlStyle
 		{
-			Absolute, // operates from teh center of the image
+			Absolute, // operates from teh center of the canvas
 			Relative, // operates from the center of the initial touch
 			Swipe, // swipe to touch touch no maintained center
 		}

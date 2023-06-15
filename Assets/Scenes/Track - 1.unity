@@ -10485,11 +10485,50 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1521666031}
     - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: RedLightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 68079521078de6245a4eabc1c0213444, type: 2}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: UserCarController
+      value: 
+      objectReference: {fileID: 209158045}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: lights.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
       propertyPath: FinishLineCollider
       value: 
       objectReference: {fileID: 1521666031}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: GreenLightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 17fb199b604cea447bc87bb5da5e824e, type: 2}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: lights.Array.data[0]
+      value: 
+      objectReference: {fileID: 1281154348}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: lights.Array.data[1]
+      value: 
+      objectReference: {fileID: 1281154347}
+    - target: {fileID: 7774161324489018913, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+      propertyPath: lights.Array.data[2]
+      value: 
+      objectReference: {fileID: 1281154346}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+--- !u!114 &209158045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 736526585426845262, guid: 88c19ecc6d5b67243b87701dfc143bfd, type: 3}
+  m_PrefabInstance: {fileID: 209158044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &209489915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59027,6 +59066,21 @@ PrefabInstance:
 --- !u!4 &1281154345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1050e9d2dd4499842a80185b225962ed, type: 3}
+  m_PrefabInstance: {fileID: 1281154344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1281154346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -219075973381979155, guid: 1050e9d2dd4499842a80185b225962ed, type: 3}
+  m_PrefabInstance: {fileID: 1281154344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1281154347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8014563700282536707, guid: 1050e9d2dd4499842a80185b225962ed, type: 3}
+  m_PrefabInstance: {fileID: 1281154344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1281154348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3541908064748396054, guid: 1050e9d2dd4499842a80185b225962ed, type: 3}
   m_PrefabInstance: {fileID: 1281154344}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1284858428

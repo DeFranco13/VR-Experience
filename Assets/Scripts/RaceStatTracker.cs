@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Vehicles.Car;
@@ -10,18 +11,25 @@ public class RaceStatTracker : MonoBehaviour
 {
     public GameObject FinishLineCollider;
     public int NumberOfLaps;
-    public MonoBehaviour UserCarController;
+    public CarController UserCarController;
     public List<MonoBehaviour> AICarAgents;
 
     public List<GameObject> lights;
     public Material RedLightMaterial;
     public Material GreenLightMaterial;
+    public AudioSource RaceCountdown;
+
+    public Canvas GameEndedCanvas;
+    public TextMeshProUGUI RaceTimeText;
+    public TextMeshProUGUI FastestSpeedText;
 
     private bool raceStarted = false;
     private int currentLap;
     private float countdown = 0;
     private float raceTime = 0;
-    private float raceEndedCountdown = 0;
+    private bool soundPlayed = false;
+    private bool gameEnded = false;
+
     public int CurrentLap
     {
         get
@@ -34,6 +42,7 @@ public class RaceStatTracker : MonoBehaviour
 
     void Start()
     {
+        GameEndedCanvas.enabled = false;
         UserCarController.enabled = false;
         AICarAgents.ForEach(
             (agent) => 
@@ -49,13 +58,23 @@ public class RaceStatTracker : MonoBehaviour
         {
             countdown += Time.deltaTime;
 
+            if (countdown > 3.75)
+            {
+                if (!soundPlayed)
+                {
+                    RaceCountdown.Play();
+                    soundPlayed = true;
+                }
+            }
             if (countdown >= 4)
+            {
                 lights[0].GetComponent<MeshRenderer>().material = RedLightMaterial;
-            if (countdown >= 5.5)
+            }
+            if (countdown >= 5)
                 lights[1].GetComponent<MeshRenderer>().material = RedLightMaterial;
-            if (countdown >= 7)
+            if (countdown >= 6)
                 lights[2].GetComponent<MeshRenderer>().material = RedLightMaterial;
-            if (countdown >= 8.5)
+            if (countdown >= 7)
             {
                 lights.ForEach(
                     (light) =>
@@ -90,15 +109,13 @@ public class RaceStatTracker : MonoBehaviour
         if (other.gameObject.Equals(FinishLineCollider))
         {
             currentLap++;
-            if (currentLap >= NumberOfLaps)
+            if (currentLap >= NumberOfLaps && !gameEnded)
             {
-                endGame();
+                GameEndedCanvas.enabled = true;
+                RaceTimeText.text = $"{Math.Floor(raceTime / 60)}:{((int)raceTime % 60)}";
+                FastestSpeedText.text = ((int)UserCarController.TopSpeed).ToString() + "km/h";
+                gameEnded = true;
             }
         }
-    }
-
-    void endGame()
-    {
-        SceneManager.LoadScene("Menu");
     }
 }

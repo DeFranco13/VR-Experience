@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -21,6 +22,13 @@ public class XRCameraSwitcher : MonoBehaviour
         {
             nextCameraRig();
         }
+    }
+
+    private void previousCameraRig()
+    {
+        disabledCameraRig(currentCameraIndex);
+        currentCameraIndex = (currentCameraIndex - 1) % CameraRigs.Length;
+        activateCameraRig(currentCameraIndex);
     }
 
     private void nextCameraRig()

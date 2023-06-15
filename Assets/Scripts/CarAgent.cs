@@ -42,7 +42,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 target.SetActive(true);
             }
 
-            this.transform.position = new Vector3(382.6f, 1.1f, 625.82f);
+            this.transform.position = new Vector3(382.6f, 0.34f, 625.82f);
 			this.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
 		}
 
@@ -52,9 +52,6 @@ namespace UnityStandardAssets.Vehicles.Car
 			sensor.AddObservation(this.transform.localPosition);
             sensor.AddObservation(this.transform.localRotation);
         }
-
-		private float speedMultiplier = 10f;
-		private float rotationSpeed = 10f;
 
 		public override void Heuristic(in ActionBuffers actionsOut)
 		{

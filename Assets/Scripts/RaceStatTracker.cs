@@ -20,13 +20,12 @@ public class RaceStatTracker : MonoBehaviour
         }
     }
 
-
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.Equals(FinishLineCollider))
+        if (other.gameObject.Equals(FinishLineCollider))
         {
             currentLap++;
-            if(currentLap >= NumberOfLaps)
+            if (currentLap / 24 >= NumberOfLaps)
             {
                 endGame();
             }

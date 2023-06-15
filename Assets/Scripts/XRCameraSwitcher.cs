@@ -18,9 +18,14 @@ public class XRCameraSwitcher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             nextCameraRig();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            previousCameraRig();
         }
     }
 

@@ -75,7 +75,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
 
             //beweeg de auto
-            carController.Move(controlSignal.x, controlSignal.z, 0f,controlSignal.y);
+            carController.Move(controlSignal.x, controlSignal.z, 0f,0f);
 			
             /*
 			 * 1) moest de auto voor een of andere reden naar boven bewegen stoppen we de episode
@@ -99,7 +99,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
 				AddReward(0.5f);
 
-                if (targetHitCount >= targetCount)
+                if (targetHitCount >= 65)
                 {
                     AddReward(5f);
                     EndEpisode();
@@ -135,6 +135,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 collidedWithTarget = true;
                 other.gameObject.SetActive(false);
 			}
+
         }
 
 
@@ -143,7 +144,7 @@ namespace UnityStandardAssets.Vehicles.Car
             if (collision.gameObject.transform.tag == "TrackObject")
 			{
 				Debug.Log("hit wall");
-                AddReward(-0.5f);
+                AddReward(-1f);
 			}
 		}
 
@@ -172,7 +173,7 @@ namespace UnityStandardAssets.Vehicles.Car
 				// Check if the wall collision timer has reached the threshold
 				if (wallCollisionTimer >= wallCollisionThreshold)
 				{
-					AddReward(-0.05f);
+					AddReward(-0.5f);
 					wallCollisionTimer = 0.0f;
 					Debug.Log("episode ended");
 					EndEpisode();
